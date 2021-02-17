@@ -223,6 +223,8 @@ def _run_remote_lte_integ_test(repo: str, magma_root: str):
                 get(tar_file_name, 'lte-artifacts')
             local('sudo mkdir -p /tmp/logs/')
             local('sudo mv lte-artifacts/* /tmp/logs/')
+            local('sudo mkdir -p /tmp/test_results/')
+            local('sudo mv /var/tmp/test_results /tmp/test_results')
         # Exit with the original test result
         sys.exit(test_result.return_code)
 
